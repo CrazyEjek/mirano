@@ -25,6 +25,7 @@
     font-family: $second-family;
     font-style: italic;
     font-weight: 400;
+    // формула размера шрифта чтобы текст изменялся при адаптиве планво
     font-size: clamp(
             32px,
             calc(32px + (8 * (100vw - 1024px) / (1440 - 1024))),

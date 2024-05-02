@@ -2,5 +2,11 @@
 @use "fonts";
 @use "./modules/header.scss";
 @use "./modules/hero.scss";
+@use "./modules/filter.scss";
+@use "./modules/choices.scss";
+@use "./modules/goods.scss";
+@use "./modules/cards.scss";
+@use "./modules/subscribe.scss";
+@use "./modules/footer.scss";
 
 @import "normalize.css";

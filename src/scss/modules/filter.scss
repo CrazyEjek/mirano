@@ -1,0 +1,120 @@
+@use '../varibles' as*;
+
+
+.filter {
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__group {
+        display: flex;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        gap: 12px;
+
+        &_choices {
+            gap: 64px;
+        }
+
+    }
+
+    .filetr {
+
+        &__radio {
+            appearance: none;
+            position: absolute;
+        }
+       
+    }
+   
+
+    &__label {
+        padding: 16px;
+        padding-left: 60px;
+        border-radius: 300px;
+        background-color: $white;
+        font-family: $font-family;
+        color: $dark;
+        background-position: center left 16px;
+        background-size: 40px;
+        cursor: pointer;
+
+
+        &_flowers {
+            background-image: url(/public/img/flow.png);
+            background-repeat: no-repeat;
+        }
+
+        &_toys {
+            background-image: url(/public/img/bear.png);
+            background-repeat: no-repeat;
+        }
+
+        &_post {
+            background-image: url(/public/img/post.png);
+            background-repeat: no-repeat;
+        }
+        &:hover {
+            background-color: $orange;
+        }
+       
+        &__radio:focus-visible + &__label {
+            outline: 2px solid $orange;
+            outline-offset: 5px;
+        }
+        &__radio:checked + &__label {
+            background-color: $light-orange;
+        }
+      
+    }
+    
+    
+}
+
+
+.filter {
+
+    &_choices {
+    }
+
+    &__group {
+
+
+        &_choices {
+            
+        }
+    }
+
+    &__select {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: url(/public/img/triangle.svg) no-repeat center/contain;
+        }
+    }
+
+    &__type-list {
+    }
+
+    &__type-item {
+    }
+
+    &__type-button {
+    }
+}
+
+
+
+
+
+
