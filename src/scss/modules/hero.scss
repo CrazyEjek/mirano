@@ -27,7 +27,7 @@
     font-weight: 400;
     font-size: clamp(
             32px,
-            calc(32px + (32 * (100vw - 1024px) / (1440 - 1024))),
+            calc(32px + (8 * (100vw - 1024px) / (1440 - 1024))),
             40px);
     line-height: 130%;
     text-align: right;
