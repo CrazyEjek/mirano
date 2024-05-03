@@ -70,24 +70,25 @@
     <section class="filter">
       <h2 class="visually-hidden"></h2>
       <div class="container filter__container">
-        <fieldset class="filter__group">  
-          <input type="radio" name="type" value="flower" id="flower" class="filetr__radio" checked>
-          <label for="" class="filter__label filter__label_flowers"> Цветы</label>
 
-          <input type="radio" name="type" value="toys" id="postcard" class="filetr__radio">
-          <label for="" class="filter__label filter__label_toys">Игрушки</label>
+        <fieldset class="filter__group"> 
+          <input type="radio" name="type" value="flower" id="flower" class="filter__radio" checked>
+          <label for="flower" class="filter__label filter__label_flower"> Цветы</label>
 
-          <input type="radio" name="type" value="postcard" id="postcard" class="filetr__radio">
-          <label for="" class="filter__label filter__label_post">Открытки</label>
+          <input type="radio" name="type" value="toys" id="toys" class="filter__radio">
+          <label for="toys" class="filter__label filter__label_toys">Игрушки</label>
 
+          <input type="radio" name="type" value="postcard" id="postcard" class="filter__radio">
+          <label for="postcard" class="filter__label filter__label_post">Открытки</label>
         </fieldset>
 
         <fieldset class="filter__group filter__group_choices">
-         
-          <div class="filter_choices choices">
+          <div class="filter__choices choices">
             <button class="filter__select choices__btn">Цена</button>
-            <div class="choices__box">
-              <fieldset class="filter__group">
+            
+            <div class="choices__box filter__choices-box">
+            <!-- может быть другой класс:  filter__group -->
+              <fieldset class="filter__price">
               <input class="filetr__input-price" type="text" placeholder="от">
               <input class="filetr__input-price" type="text" placeholder="до">
             </fieldset>
@@ -97,7 +98,8 @@
 
           <div class="filter_choices choices">
             <button class="filter__select choices__btn">Тип товара</button>
-            <div class="choices__box">
+            
+            <div class="choices__box filter__choices-box">
               <ul class="filter__type-list">
                 <li class="filter__type-item">
                   <button class="filter__type-button">Монобукеты</button>

@@ -11,3 +11,18 @@ $pattern: #f4f8eb;
 $font-family: "Inter", sans-serif;
 $second-family: "Playfair Display", sans-serif;
    
+// вынесенная формула фонт сайза, делаем через миксин, интерполяция
+ // формула размера шрифта чтобы текст изменялся при адаптиве планво - вынесли в верибалс
+    // font-size: clamp(
+    //         32px,
+    //         calc(32px + (8 * (100vw - 1024px) / (1440 - 1024))),
+    //         40px);
+
+@mixin responsive-font-size($min-size, $max-size, $min-screen, $max-screen) {
+    font-size: clamp(
+    #{$min-size}px,
+    calc(#{$min-size}px + (#{$max-size - $min-size} * (100vw - #{$min-screen}px) / ($max-screen - $min-screen))),
+    #{$max-size}px
+    );
+}
+
