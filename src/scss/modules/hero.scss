@@ -4,6 +4,14 @@
 .hero {
     padding: 60px 0;
 
+    @include tablet {
+        padding: 40px 0;
+    }
+
+    @include mobile {
+        padding: 40px 0 73px;
+    }
+
     &__head-group {
         margin-bottom: 24px;
     }
@@ -16,6 +24,7 @@
         //     80px,
         //     calc(80px + (40 * (100vw - 1024px) / (1440 - 1024))),
         //     120px);
+
         @include responsive-font-size(80, 120, 1024, 1440);
         line-height: 1.2;
         text-transform: uppercase;
@@ -41,6 +50,7 @@
     //         32px,
     //         calc(32px + (8 * (100vw - 1024px) / (1440 - 1024))),
     //         40px);
+
     @include responsive-font-size(32, 40, 1024, 1440);
     line-height: 130%;
     text-align: right;

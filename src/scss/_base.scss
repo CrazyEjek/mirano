@@ -103,7 +103,7 @@
     margin: 0 auto;
 
     @include tablet {
-      min-width: 694px;
+      max-width: 694px;
     }
 
     @include mobile {

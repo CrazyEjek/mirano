@@ -28,8 +28,6 @@
             "logo logo cart"
             "form form form";
         }
-
-
         
     }
 
@@ -45,7 +43,7 @@
 
         @include tablet {
             grid-area: form;
-            min-width: 100%;
+            max-width: 100%;
         }
     }
 
