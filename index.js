@@ -3,7 +3,7 @@ import "@/scss/index.scss";
 
 const header = document.querySelector(".header");
 const body = document.body;
-const headerHeight = header.offsetHeight;
+let headerHeight = header.offsetHeight;
 
 // window - браузер
 // document - наш сайт
@@ -12,10 +12,22 @@ window.addEventListener("resize", () => {
     headerHeight = header.offsetHeight;
 });
 
+window.addEventListener("scroll", () => {
+    const scrollDistance = window.scrollY;
+
+    if(scrollDistance > 200) {
+        header.classList.add("header_fixed");
+        body.style.paddingTop = `${headerHeight}px`;
+    } else {
+        header.classList.remove("header_fixed");
+        body.style.paddingTop = "0";
+    }
+});
+
 
 // вызов выпадашки и ее позиционирование, сначала получаем координаты через рект, потом двигаем куда надо
 
-const adjustElementPosition = (element) => {
+const adjustElementPosition = (element, count = 0) => {
     const rect = element.getBoundingСlientRect();
     const viewportWidth = window.innerWidth;
 
@@ -32,20 +44,14 @@ const adjustElementPosition = (element) => {
     element.style.right = "auto";
     element.style.transform = "translateX(-50%)";
    }
+
+   const postRect = element.getBoundingСlientRect();
+   if ((postRect.left < 0 || postRect.right > viewportWidth) && count < 3) {
+    count++;
+    adjustElementPosition(element, count);
+   }
 };
 
-window.addEventListener("scroll", () => {
-    const scrollDistance = window.scrollY;
-
-    if(scrollDistance > 200) {
-        header.classList.add("header_fixed");
-        body.style.paddingTop = `${headerHeight}px`;
-    } else {
-        header.classList.remove("header_fixed");
-        body.style.paddingTop = "0";
-
-    }
-});
 
 const choices = document.querySelectorAll(".choices");
 
@@ -54,10 +60,9 @@ choices.forEach((choices) => {
     const box = choices.querySelector(".choices__box");
 
     btn.addEventListener("click", () => {
-        box.classList.toggle("choices__box_open")
+        box.classList.toggle("choices__box_open");
 
         adjustElementPosition(box);
-
     });
 
     window.addEventListener("resize", () => {
