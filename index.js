@@ -1,1 +1,66 @@
 import "@/scss/index.scss";
+
+
+const header = document.querySelector(".header");
+const body = document.body;
+const headerHeight = header.offsetHeight;
+
+// window - браузер
+// document - наш сайт
+
+window.addEventListener("resize", () => {
+    headerHeight = header.offsetHeight;
+});
+
+
+// вызов выпадашки и ее позиционирование, сначала получаем координаты через рект, потом двигаем куда надо
+
+const adjustElementPosition = (element) => {
+    const rect = element.getBoundingСlientRect();
+    const viewportWidth = window.innerWidth;
+
+   if (rect.left < 0 ) {
+    element.style.left = "0";
+    element.style.right = "auto";
+    element.style.transform = "translateX(0)";
+   } else if ( rect.right > viewportWidth) {
+    element.style.left = "auto";
+    element.style.right = "0";
+    element.style.transform = "translateX(0)";
+   } else {
+    element.style.left = "50%";
+    element.style.right = "auto";
+    element.style.transform = "translateX(-50%)";
+   }
+};
+
+window.addEventListener("scroll", () => {
+    const scrollDistance = window.scrollY;
+
+    if(scrollDistance > 200) {
+        header.classList.add("header_fixed");
+        body.style.paddingTop = `${headerHeight}px`;
+    } else {
+        header.classList.remove("header_fixed");
+        body.style.paddingTop = "0";
+
+    }
+});
+
+const choices = document.querySelectorAll(".choices");
+
+choices.forEach((choices) => {
+    const btn = choices.querySelector(".choices__btn");
+    const box = choices.querySelector(".choices__box");
+
+    btn.addEventListener("click", () => {
+        box.classList.toggle("choices__box_open")
+
+        adjustElementPosition(box);
+
+    });
+
+    window.addEventListener("resize", () => {
+        adjustElementPosition(box);
+    });
+});
