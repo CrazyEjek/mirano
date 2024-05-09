@@ -54,14 +54,22 @@ const adjustElementPosition = (element, count = 0) => {
 };
 
 
-const choices = document.querySelectorAll(".choices");
+const choice = document.querySelectorAll(".choices");
 
-choices.forEach((choices) => {
+choice.forEach((choices) => {
     const btn = choices.querySelector(".choices__btn");
     const box = choices.querySelector(".choices__box");
 
     btn.addEventListener('click', () => {
         box.classList.toggle("choices__box_open");
+
+        choices.forEach(otherChoice => {
+            if(otherChoice !== choicess) {
+                otherChoice
+                    .querySelector('.choices__box')
+                    .classList.remove('choices__box_open')
+            }
+        })
 
         adjustElementPosition(box);
     });
@@ -69,4 +77,16 @@ choices.forEach((choices) => {
     window.addEventListener("resize", () => {
         adjustElementPosition(box);
     });
+});
+
+const headerCartButton = document.querySelector('.header__cart-button');
+const cartClose = document.querySelector('.cart__close');
+const cart = document.querySelector('.cart');
+
+headerCartButton.addEventListener('click', () => {
+    cart.classList.toggle("cart_open");
+});
+
+cartClose.addEventListener('click', ()=> {
+    cart.classList.remove("cart_open");
 });
