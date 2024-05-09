@@ -43,9 +43,10 @@ const adjustElementPosition = (element, count = 0) => {
     element.style.left = "50%";
     element.style.right = "auto";
     element.style.transform = "translateX(-50%)";
-   }
+   };
 
    const postRect = element.getBoundingСlientRect();
+
    if ((postRect.left < 0 || postRect.right > viewportWidth) && count < 3) {
     count++;
     adjustElementPosition(element, count);
@@ -59,7 +60,7 @@ choices.forEach((choices) => {
     const btn = choices.querySelector(".choices__btn");
     const box = choices.querySelector(".choices__box");
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
         box.classList.toggle("choices__box_open");
 
         adjustElementPosition(box);
