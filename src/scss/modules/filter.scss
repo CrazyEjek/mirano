@@ -30,6 +30,15 @@
         }
     }
 
+    &__type-list {
+        background: $white;
+        border-radius: 12px;
+        padding: 24px;
+        min-width: 244px;
+        height: 195px;
+    }
+
+
     &__radio {
         appearance: none;
         position: absolute;
@@ -91,6 +100,13 @@
         position: relative;
     }
 
+    &__price {
+        border: 0;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+    }
+
     &__group {
 
 
@@ -112,14 +128,6 @@
         }
     }
 
-    &__price {
-        border: 0;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 8px;
-
-    }
 
     // пропадает фильтр по цене (топ, лефт, трансформ)
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -153,7 +161,11 @@
     }
 
     &__type-list {
-       
+        background: $white;
+        border-radius: 12px;
+        padding: 24px;
+        min-width: 244px;
+        height: 195px;
     }
 
     &__type-item {

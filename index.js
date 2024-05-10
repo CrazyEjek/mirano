@@ -28,7 +28,7 @@ window.addEventListener("scroll", () => {
 // вызов выпадашки и ее позиционирование, сначала получаем координаты через рект, потом двигаем куда надо
 
 const adjustElementPosition = (element, count = 0) => {
-    const rect = element.getBoundingСlientRect();
+    const rect = element.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 
    if (rect.left < 0 ) {
@@ -45,7 +45,7 @@ const adjustElementPosition = (element, count = 0) => {
     element.style.transform = "translateX(-50%)";
    };
 
-   const postRect = element.getBoundingСlientRect();
+   const postRect = element.getBoundingClientRect();
 
    if ((postRect.left < 0 || postRect.right > viewportWidth) && count < 3) {
     count++;
@@ -63,8 +63,8 @@ choice.forEach((choices) => {
     btn.addEventListener('click', () => {
         box.classList.toggle("choices__box_open");
 
-        choices.forEach(otherChoice => {
-            if(otherChoice !== choicess) {
+        choice.forEach(otherChoice => {
+            if(otherChoice !== choices) {
                 otherChoice
                     .querySelector('.choices__box')
                     .classList.remove('choices__box_open')
