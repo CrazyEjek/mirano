@@ -1,9 +1,14 @@
-import { fetchProducts } from "./API"
+import { fetchProducts } from "./API";
+import { ProductCard } from "./ProductCard";
 
 export const renderProducts = async () => {
     const goodsList = document.querySelector('.goods__list'); 
     const products = await fetchProducts();
-        // сюда чтото надо дописать или с сервера данные будут
+       
     goodsList.innerHTML = "";
-    
+
+    products.forEach((product) => {
+        const productCard = ProductCard(product);
+        goodsList.append(productCard);
+    }); 
 };

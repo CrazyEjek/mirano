@@ -4,7 +4,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 export default defineConfig({
     esbuild: {
         jsxFactory: 'jsx',
-        jsxInject: "import jsx from '@/jsx.js",
+        jsxInject: "import jsx from '@/jsx.js'",
     },
     resolve: {
         alias: {
