@@ -36,4 +36,6 @@ export const fetchProducts = async (params = {}) => {
         console.error(`Ошибка при получении данных с сервера: ${error}`);
         return [];
     }
-};
+}; 
+
+// я попробую написать комент и зафиксировать
