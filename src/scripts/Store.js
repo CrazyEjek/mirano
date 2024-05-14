@@ -23,14 +23,14 @@ class Store {
         return this.products;
     }
 
+    getCategories() {
+        return this.categories;
+    }
+
     setProducts(newProducts) {
         this.products = newProducts;
         this.updateCategories(newProducts);
         this.notifyObservers();
-    }
-
-    getCategories() {
-        return this.categories;
     }
 
     updateCategories(products) {
@@ -40,7 +40,7 @@ class Store {
             if (product.categories) {
                 product.categories.forEach((category) => {
                     this.categories.add(category);
-                })
+                });
             }
         });
         this.notifyObservers();

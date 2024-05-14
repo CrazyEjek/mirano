@@ -2,6 +2,7 @@ import { Value } from "sass";
 import { store } from "./Store";
 export const API_URL = 'http://localhost:3000';
 
+// запросы с сервера
 // `/api/products?type=bouquets`
 // - `/api/products?type=toys`
 // - `/api/products?type=postcards`
@@ -22,7 +23,7 @@ const formatQueryString = params => {
 export const fetchProducts = async (params = {}) => {
     try {
         const response = await fetch(
-            `${API_URL}/api/products?${formatQueryString(params)}`);
+            `${API_URL}/api/products${formatQueryString(params)}`);
 
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

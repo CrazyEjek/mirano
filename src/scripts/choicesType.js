@@ -12,7 +12,6 @@ export const initChoicesType = () => {
         } else {
             typeChoices.style.display = "none";
         }
-
     };
 
     store.subscribe(updateTypeChoicesVisibility);

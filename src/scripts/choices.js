@@ -37,9 +37,11 @@ import { debounce } from "./debounce";
 
         if(!clickInside) {
             choices.forEach((choice) => {
-                choice.querySelector('.choices__box')
-                .classList.remove('choices__box_open');
+                choice
+                .querySelector(".choices__box")
+                .classList.remove("choices__box_open");
         });
+        
        document.removeEventListener("click", closeAllChoices);
     }; 
 };
@@ -60,7 +62,7 @@ import { debounce } from "./debounce";
                 }
             });
     
-        });
+        
 
         if (box.classList.contains("choices__box_open")) {
             document.addEventListener('click', closeAllChoices);
@@ -72,8 +74,10 @@ import { debounce } from "./debounce";
 
         window.addEventListener('resize', debounce(() => {
             adjustElementPosition(box);
-          }));
-        };
+          }),
+        );
+    });
+};
 
 
 
