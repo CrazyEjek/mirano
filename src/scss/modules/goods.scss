@@ -48,6 +48,13 @@
             column-gap: 12px;
         }  
     }
+
+    &__no-product {
+        text-align: center;
+        font-size: 32px;
+        color: $light-orange;
+        grid-column: 1 / -1;
+    }
 }
 
 

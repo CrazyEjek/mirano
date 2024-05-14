@@ -2,7 +2,6 @@
 // вызов выпадашки и ее позиционирование, сначала получаем координаты через рект, потом двигаем куда надо
 import { debounce } from "./debounce";
 
-    
     export const initChoices = () => {
         const choices = document.querySelectorAll(".choices");
 

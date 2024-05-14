@@ -5,6 +5,7 @@ import { initCart } from "./scripts/cart";
 import { renderProducts } from "./scripts/renderProducts";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
+import { initSearchProduсts } from "./scripts/searchProducts";
 
 
 // чтобы скрипты загружались после прогрузки всей страницы
@@ -15,6 +16,8 @@ const init = () => {
     initCart();
     renderProducts();
     filterProducts();
+    initSearchProduсts();
+
 
 
     // `/api/products?type=bouquets`

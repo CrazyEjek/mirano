@@ -37,5 +37,3 @@ export const fetchProducts = async (params = {}) => {
         return [];
     }
 }; 
-
-// я попробую написать комент и зафиксировать
