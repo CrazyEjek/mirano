@@ -32,11 +32,8 @@
         background: $white;
         border-radius: 32px;
         padding: 24px 16px;
-        // как вариант макс \ мин      длина корзины
         max-height: 600px;
         max-width: 310px;
-        // display: flex;
-        // flex-direction: column;
 
         @media (max-width: 1360px) {
             height: 100%;
