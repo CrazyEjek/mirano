@@ -1,7 +1,9 @@
 import { fetchProducts } from "./API";
+import { callBackWithPreload } from "./preload";
 
 export const initSearchProduсts = () => {
     const headerForm = document.querySelector('.header__form');
+    const goodsSection = document.querySelector('.goods'); 
     const goodsTitle = document.querySelector('.goods__title');
 
     headerForm.addEventListener('submit', (e) => {
@@ -12,8 +14,8 @@ export const initSearchProduсts = () => {
         const searchQuery = formData.get("search").trim();
 
         if (searchQuery) {
-            goodsTitle.textContent = "Вы искали это"
-            fetchProducts({search: searchQuery});
+            goodsTitle.textContent = "Вы искали это";
+            callBackWithPreload(goodsSection, fetchProducts, {search: searchQuery});
         };
     });
 };
