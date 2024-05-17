@@ -22,7 +22,7 @@ export const ProductCard = (product) =>(
             onMouseLeave={(e) => {
               e.target.innerHTML = `${product.price}&nbsp;₽`;
             }}>
-            {product.price}&nbsp;₽;
+            {product.price}&nbsp;₽
             </button>
           </div>
         </div>

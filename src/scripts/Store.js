@@ -19,6 +19,7 @@ class Store {
         this.observers.forEach((observer) => observer());
     }
 
+
     getProducts() {
         return this.products;
     }
