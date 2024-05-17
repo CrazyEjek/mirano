@@ -1,5 +1,4 @@
-import { Value } from "sass";
-import { store } from "./Store";
+import { productStore } from "./Store";
 export const API_URL = 'http://localhost:3000';
 
 // запросы с сервера
@@ -31,7 +30,7 @@ export const fetchProducts = async (params = {}) => {
 
     const products = await response.json();
     
-    store.setProducts(products);
+    productStore.setProducts(products);
     } catch (error) {
         console.error(`Ошибка при получении данных с сервера: ${error}`);
         return [];

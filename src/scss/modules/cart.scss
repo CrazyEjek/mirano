@@ -44,8 +44,8 @@
         }
 
         @include mobile {
-            min-height: auto;
-            max-width: 292px;
+            min-height: 350px;
+            width: 292px;
         }
     }
 

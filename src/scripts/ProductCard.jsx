@@ -1,6 +1,9 @@
 import { API_URL } from "./API";
+import { cartStore } from "./Store";
 
-export const ProductCard = (product) =>(
+export const ProductCard = (product) =>{
+  const text = `${product.price} $`;
+  return (
 <li class="goods__item">
       <article class="goods__card card">
         <img
@@ -13,7 +16,7 @@ export const ProductCard = (product) =>(
           <h3 class="card__title">{product.name}</h3>
 
           <div class="card__footer">
-          <p class="card__date-delivery">сегодня в 14:00</p>
+          <p class="card__date-delivery">сегодня в&nbsp;14:00</p>
 
           <button class="card__button"
             onMouseEnter={(e) => {
@@ -21,7 +24,10 @@ export const ProductCard = (product) =>(
             }}
             onMouseLeave={(e) => {
               e.target.innerHTML = `${product.price}&nbsp;₽`;
-            }}>
+            }}
+            onClick={() => {
+              cartStore.addProductCart(product.id);
+              }}>
             {product.price}&nbsp;₽
             </button>
           </div>
@@ -29,3 +35,4 @@ export const ProductCard = (product) =>(
       </article>
     </li>
   );
+};
