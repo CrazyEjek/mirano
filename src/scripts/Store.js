@@ -2,8 +2,8 @@ import { API_URL } from "./API";
 
 class Store {
     constructor() {
-        this.observers = [];
-        // создаем новую коллекцию
+        this.observers = [];        // создаем новую коллекцию
+        
     }
     // observers - это массив для хранения функция наблюдателей
     // метод для добавления новых наблюдателей при изменении состояний
@@ -12,10 +12,10 @@ class Store {
         this.observers.push(observerFunction);
     }
 
-    // метод уведомления всех наблюдателей об изменении в хранилище
-    notifyObservers() {
-    // здесь вызываем функции чтобы сообщить что произошли изменения
-    // this - это обьект (в нашем случае this = store)
+    
+    notifyObservers() {     // метод уведомления всех наблюдателей об изменении в хранилище
+                            // здесь вызываем функции чтобы сообщить что произошли изменения
+                            // this - это обьект (в нашем случае this = store)
         this.observers.forEach((observer) => observer());
     }
 }
@@ -62,7 +62,7 @@ class CartStore extends Store {
         this.cart = []; 
     }
 
-    // сначала мы регестрируемся, потом получаем данные
+    // сначала мы регистрируемся, потом получаем данные
     async init() {
         await this.registerCart();
         await this.fetchCart();
@@ -76,7 +76,7 @@ class CartStore extends Store {
             });
 
             if(!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+                throw new Error(`HTTP error! status ${response.status}`);
             }
         } catch (err) {
             console.error(err);
@@ -88,11 +88,10 @@ class CartStore extends Store {
         try {
             const response = await fetch(`${API_URL}/api/cart`, {
                 method: "GET",
-                // креденитал - передача куков
-                credentials: "include",
+                credentials: "include",    // креденитал - передача куков
             });
             if(!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+                throw new Error(`HTTP error! status ${response.status}`);
             }
 
             const data = await response.json();
@@ -107,19 +106,18 @@ class CartStore extends Store {
     getCart() {
         return this.cart;
     }
-    // айди и количество товара с сервера
-    async postCart({id, quantity}) {
+    
+    async postCart({id, quantity}) {      // айди и количество товара с сервера
         try {
             const response = await fetch(`${API_URL}/api/cart/items`, {
                 method: "POST",
-                // креденитал - передача куков
                 credentials: "include",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({ProductId: id, quantity}),
+                headers: {"Content-Type": "application/json",},
+                body: JSON.stringify({ productId: id, quantity}),
             });
 
             if(!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+                throw new Error(`HTTP error! status ${response.status}`);
             }
 
             const data = await response.json();
@@ -133,7 +131,6 @@ class CartStore extends Store {
     async addProductCart(id) {
         await this.postCart({ id, quantity: 1});
     }
-
 }
 export const productStore = new ProductStore();
 export const cartStore = new CartStore();

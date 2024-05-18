@@ -3,6 +3,7 @@ import { cartStore } from "./Store";
 
 export const renderCart = () => {
     const cartList = document.querySelector(".cart__list");
+    console.log(cartList);
     const cartPriceTotal = document.querySelector(".cart__price_total");
 
     const updateList = () => {
@@ -20,7 +21,7 @@ export const renderCart = () => {
 
         const productCards = cart.map(CartElem);
         cartList.append(...productCards);
-        // метод подсчета суммы товаров в корзине (аккумултор)
+        // метод подсчета суммы товаров в корзине (аккум)
         const totalPriceValue = cart.reduce(
             (acc, product) => acc + product.price * product.quantity, 
             0,);

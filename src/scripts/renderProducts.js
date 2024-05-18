@@ -3,9 +3,10 @@ import { productStore } from "./Store";
 
 export const renderProducts = async () => {
     const goodsList = document.querySelector(".goods__list");
+
     const updateList = () => {
     const products = productStore.getProducts();
-        goodsList.innerHTML = "";
+       goodsList.innerHTML = "";
 
         if (products.length === 0) {
             const messageItem = document.createElement("li");
