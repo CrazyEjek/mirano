@@ -23,12 +23,8 @@ cartStore.subscribe(() => {
     headerCartButton.textContent = cartStore.getCart().length; 
 });
 
-
-
 headerCartButton.addEventListener("click", toggleCart);
-
-
-    cartClose.addEventListener("click", () => {
-    cart.classList.remove("cart_open");
+cartClose.addEventListener("click", () => {
+cart.classList.remove("cart_open");
   });
 };
