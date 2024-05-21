@@ -3,7 +3,6 @@ import { cartStore } from "./Store";
 
 export const renderCart = () => {
     const cartList = document.querySelector(".cart__list");
-    console.log(cartList);
     const cartPriceTotal = document.querySelector(".cart__price_total");
 
     const updateList = () => {

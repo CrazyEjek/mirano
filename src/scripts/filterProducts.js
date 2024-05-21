@@ -22,9 +22,10 @@ export const filterProducts = () => {
         callBackWithPreload(goodsSection, fetchProducts, params);
     };
 
-    applyFilters();
+   
 
     const applyPriceFilters = debounce(applyFilters, 500);
+    applyFilters();
     
     filterForm.addEventListener('input', (event) => {
         const target = event.target;

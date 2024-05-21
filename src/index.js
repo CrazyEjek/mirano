@@ -17,12 +17,6 @@ const init = () => {
     renderProducts();
     filterProducts();
     initSearchProduсts();
-
-
-
-    // `/api/products?type=bouquets`
-    // - `/api/products?type=toys`
-    // - `/api/products?type=postcards`
 };
 
 document.addEventListener('DOMContentLoaded', init);

@@ -1,10 +1,5 @@
 import { productStore } from "./Store";
-export const API_URL = 'http://localhost:3000';
-
-// запросы с сервера
-// `/api/products?type=bouquets`
-// - `/api/products?type=toys`
-// - `/api/products?type=postcards`
+export const API_URL = "https://veil-dirt-anchovy.glitch.me";
 
 const formatQueryString = params => {
     if (Object.keys(params).length === 0 ) {
