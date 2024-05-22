@@ -6,6 +6,7 @@ import { renderProducts } from "./scripts/renderProducts";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
 import { initSearchProduсts } from "./scripts/searchProducts";
+import { initOrder } from "./scripts/orderController";
 
 
 // чтобы скрипты загружались после прогрузки всей страницы
@@ -17,6 +18,7 @@ const init = () => {
     renderProducts();
     filterProducts();
     initSearchProduсts();
+    initOrder();
 };
 
 document.addEventListener('DOMContentLoaded', init);

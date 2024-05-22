@@ -1,5 +1,6 @@
 import { productStore } from "./Store";
-export const API_URL = "https://veil-dirt-anchovy.glitch.me";
+// export const API_URL = "https://veil-dirt-anchovy.glitch.me";
+export const API_URL = "https://dashing-heavenly-poppy.glitch.me";
 
 const formatQueryString = params => {
     if (Object.keys(params).length === 0 ) {
