@@ -61,9 +61,6 @@
         font-size: 28px;
     }
 
-    &__close {
-    }
-
     &__data-delivery {
         padding-left: 20px;
         background-image: url(/public/img/delivery.svg);
@@ -160,5 +157,21 @@
         padding: 9px 16px 8px 16px;
         background: $light-orange;
         color: $white;
+
+        &:hover {
+            background-color: $orange;
+        }
+
+        &:focus-visible {
+            outline: none;
+            border-color: $light-orange;
+            background-color: $orange;
+        }
+
+        &:disabled {
+            background-color: $light-orange;
+            opacity: 0.4;
+
+        }
     }
 };

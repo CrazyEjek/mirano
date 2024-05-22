@@ -10,7 +10,6 @@ export const CartElem = (product) => {
     />
     <h4 class="cart__item-title">{product.name}</h4>
 
-
     <div class="cart__counter">
       <button 
       class="cart__counter-btn"
