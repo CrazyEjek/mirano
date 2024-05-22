@@ -4,6 +4,8 @@ import { renderCart } from "./renderCart";
     const headerCartButton = document.querySelector(".header__cart-button");
     const cartClose = document.querySelector(".cart__close");
     const cart = document.querySelector(".cart");
+
+
     // на большом разрешении плавный скролл до корзины
     const toggleCart = () => {
         cart.classList.toggle("cart_open");
