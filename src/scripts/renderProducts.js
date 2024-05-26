@@ -5,11 +5,11 @@ export const renderProducts = async () => {
     const goodsList = document.querySelector(".goods__list");
 
     const updateList = () => {
-    const products = productStore.getProducts();
+    const products = productStore.products;
        goodsList.innerHTML = "";
 
-        if (products.length === 0) {
-            const messageItem = document.createElement("li");
+         if (products.length === 0 && !productStore.loading) {
+      const messageItem = document.createElement("li");
             messageItem.textContent = "У нас нет таких товаров:(";
             messageItem.classList.add("goods__no-product");
             goodsList.append(messageItem);

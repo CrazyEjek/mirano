@@ -1,5 +1,6 @@
 
 // вызов выпадашки и ее позиционирование, сначала получаем координаты через рект, потом двигаем куда надо
+import { productStore } from "./Store";
 import { debounce } from "./debounce";
 
     export const initChoices = () => {
@@ -75,6 +76,7 @@ import { debounce } from "./debounce";
             adjustElementPosition(box);
           }),
         );
+        productStore.subscribe(adjustElementPosition.bind(null, box));
     });
 };
 

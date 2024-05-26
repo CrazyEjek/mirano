@@ -1,6 +1,4 @@
 import { productStore } from "./Store";
-// export const API_URL = "https://veil-dirt-anchovy.glitch.me";
-export const API_URL = "https://dashing-heavenly-poppy.glitch.me";
 
 const formatQueryString = params => {
     if (Object.keys(params).length === 0 ) {
@@ -15,23 +13,26 @@ const formatQueryString = params => {
     return `?${searchParams.toString()}`;
 };
 
+export const API_URL = "https://empty-absorbed-winter.glitch.me";
+
 export const fetchProducts = async (params = {}) => {
     try {
-        const response = await fetch(
-            `${API_URL}/api/products${formatQueryString(params)}`);
-
-    if (!response.ok) {
+      const response = await fetch(
+        `${API_URL}/api/products${formatQueryString(params)}`,
+      );
+  
+      if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const products = await response.json();
-    
-    productStore.setProducts(products);
+      }
+  
+      const products = await response.json();
+  
+      return products;
     } catch (error) {
-        console.error(`Ошибка при получении данных с сервера: ${error}`);
-        return [];
+      console.error(`Ошибка при получении данных: ${error}`);
+      return [];
     }
-}; 
+  };
 
 export const sendOrder = async (orderData) => {
     try {
